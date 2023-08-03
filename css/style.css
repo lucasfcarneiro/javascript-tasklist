@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+margin: 0;
+padding: 0;
+font-family: Arial, Helvetica, sans-serif;
+background: #eeeeee;
+}
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+header{
+    display: flex;
+    flex-flow:  row wrap;
+    align-items: center;
+    width:  90%;
+    margin: auto;
+}
+
+input{
+    height: 120px;
+    font-size: 2rem;
+    width: 80%;
+    padding-left: 10%;
+}
+
+button.add{
+    width: 20%;
+    cursor: pointer;
+    background: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 120px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+    margin: auto auto;
+    padding-top: 40px;
+    /*border: 2px solid blue;*/
+}
+
+.item{
+    display :flex;
+    flex-flow: row wrap; 
+    justify-content: center;
+    align-items: center;
+    background: white;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 0 20px #ccc;
+    margin-bottom: 20px;
+}
+
+.item.clicked{
+    background: #b0e2b9;
+}
+.item.item.clicked .item-name{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.item-icon{
+    flex:20%;
+    text-align: center;
+    font-size: 2rem;
+    
+}
+.item-name{
+    flex:55%;
+}
+.item-button{
+    flex:25%;
+
+}
+.delete{
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    height: 80px;
+    width: 100%;
+}
+
+
