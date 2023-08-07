@@ -1,9 +1,9 @@
-let input = document.getElementById('inputTask');
-let buttonAdd = document.getElementById('btnAdd');
+let inputTask = document.getElementById('inputTask');
+let buttonAdd = document.getElementById('buttonAdd');
 let main = document.getElementById('listArea');
 
 function addTask(){
-    let inputValue = input.inputValue;
+    let inputValue = inputTask.value;
 
     if ((inputValue !== "") && (inputValue!== null) && (inputValue !== undefined)){
         
@@ -19,10 +19,17 @@ function addTask(){
         </div>
     </div>`;
 
-    main.innerHTML += newItem;   
+    main.innerHTML += newItem;  
 
-    input.inputValue = "";
-    input.focus();
+    inputTask.value = "";
+    inputTask.focus();
 
     }
 }
+
+inputTask.addEventListener("keyup", function(event){
+    if(event.keyCode === 13){
+        event.preventDefault();
+        buttonAdd.click();
+    }
+})
