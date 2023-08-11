@@ -13,7 +13,7 @@ function addTask(){
 
         let newItem = `<div id="${counter}" class="item">
         <div onclick= "selectTask(${counter})" class="item-icon">
-        <i class="fa-regular fa-circle"></i>
+        <i id="icon_${counter}" class="fa-regular fa-circle"></i>
         </div>
         <div onclick= "selectTask(${counter})" class="item-name"> 
         ${inputValue}
@@ -33,12 +33,23 @@ function addTask(){
 
 function deleteTask(id){
 
-    let task = document.getElementById(id);
+    var task = document.getElementById(id);
     task.remove();
 }
 
 function selectTask(id){
-    
+    var item = document.getElementById(id);
+    var itemClass = item.getAttribute('class');
+    //console.log(itemClass);
+
+    if(itemClass == "item"){
+        item.classList.add('clicked');
+
+        var icon = document.getElementById('icon_'+ id);
+        icon.classList.remove('fa-regular fa-circle');
+        icon.classList.add('fa-solid fa-circle-check');
+        
+    }
 }
 
 inputTask.addEventListener("keyup", function(event){
@@ -47,3 +58,4 @@ inputTask.addEventListener("keyup", function(event){
         buttonAdd.click();
     }
 })
+

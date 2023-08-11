@@ -65,7 +65,7 @@ main{
 .item.clicked{
     background: #b0e2b9;
 }
-.item.item.clicked .item-name{
+.item.clicked .item-name{
     text-decoration: line-through;
     color: gray;
 }
