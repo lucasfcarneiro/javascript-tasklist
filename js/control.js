@@ -39,18 +39,22 @@ function deleteTask(id){
 
 function selectTask(id){
     var item = document.getElementById(id);
-    var itemClass = item.getAttribute('class');
-    //console.log(itemClass);
+    var hasClickedClass = item.classList.contains('clicked');
 
-    if(itemClass == "item"){
+    if (!hasClickedClass) {
         item.classList.add('clicked');
-
         var icon = document.getElementById('icon_'+ id);
-        icon.classList.remove('fa-regular fa-circle');
-        icon.classList.add('fa-solid fa-circle-check');
-        
+        icon.classList.remove('fa-regular', 'fa-circle'); 
+        icon.classList.add('fa-solid', 'fa-circle-check');
+        item.parentNode.appendChild(item);
+    } else {
+        item.classList.remove('clicked');
+        var icon = document.getElementById('icon_'+ id);
+        icon.classList.remove('fa-solid', 'fa-circle-check'); 
+        icon.classList.add('fa-regular', 'fa-circle');
     }
 }
+
 
 inputTask.addEventListener("keyup", function(event){
     if(event.keyCode === 13){
