@@ -60,12 +60,13 @@ main{
     width: 100%;
     box-shadow: 0 0 20px #ccc;
     margin-bottom: 20px;
+    cursor:pointer;
 }
 
 .item.clicked{
     background: #b0e2b9;
 }
-.item.item.clicked .item-name{
+.item.clicked .item-name{
     text-decoration: line-through;
     color: gray;
 }
